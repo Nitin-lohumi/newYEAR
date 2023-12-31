@@ -1,0 +1,197 @@
+body{
+     background: linear-gradient(to right, rgb(57, 54, 54), rgba(81, 171, 113, 0));
+     overflow: hidden; /* Hide scrollbars */
+     transition: all 2s linear;
+     animation-name:body;
+     animation-iteration-count: infinite;
+     animation-delay: 4s;
+     animation-duration: .3s;
+}
+@keyframes body {
+    0%{
+        background: linear-gradient(to right, rgb(211, 255, 53), rgba(2, 242, 86, 0));
+    }
+    50%{
+        background: linear-gradient(to right, rgb(146, 101, 219), rgba(190, 237, 17, 0));
+    }
+    100%{
+        background: linear-gradient(to left, rgb(34, 255, 0), rgba(255, 1, 200, 0));
+    }
+}
+
+.box{
+    width:100%;
+    display: grid; 
+    place-items:  center;
+    height:90vh;
+    transition: all 2s linear;
+}
+
+#heading1{
+    color: rgb(237, 27, 206);
+    mix-blend-mode:hard-light;
+    font-size: 23vh;
+    letter-spacing: 8px;
+    text-align: center;
+    padding:10px;
+    position:relative;
+    filter:drop-shadow(2rem 1rem 1rem rgb(49, 49, 44));
+    display:block;
+    font-weight:900;
+    transition: all 2s linear;
+    cursor: pointer;
+}
+#heading2{
+    color: rgb(255, 255, 255);
+    mix-blend-mode:hard-light;
+    letter-spacing: 10px;
+    font-size: 23vh;
+    text-align: center;
+    padding:10px;
+    position:absolute;
+    display:none;
+    transition: all 2s ease-in;
+    animation-name:move;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    cursor: pointer;
+}
+@keyframes move{
+   0%{
+     transform: rotateX(1000deg) rotateY(1000deg) rotateZ(100deg);
+     filter:opacity(.1);
+     filter: brightness(0);
+     filter:contrast(0)
+   }
+   50%{
+    /* transform: rotateX(360deg) rotateY(360deg) rotateZ(0deg); */
+    filter:opacity(.1);
+    filter: brightness(5);
+    
+   }
+   100%{
+    transform:rotateZ(0deg) rotateX(0deg) rotateY(0deg);
+    filter:opacity(1);
+    filter:contrast(2)
+   }
+
+}
+#emoji1{
+    margin:0;
+    padding:0;
+    font-size:22vh;
+    filter: drop-shadow(0 0 0.5rem rgb(227, 115, 92));
+}
+#emoji2{
+    margin:0;
+    padding:0;
+    font-size:23vh;
+    filter: drop-shadow(0 0 0.5rem rgb(37, 151, 3));
+}
+#emoji3{
+    margin:0;
+    padding:0;
+    font-size:23vh;
+    color:rgb(81, 81, 195);
+    filter: drop-shadow(1rem 3rem 1rem rgb(67, 61, 61));
+    animation-name:show;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+}
+@keyframes show {
+    0%{
+        color:white;
+    }
+    100%{
+        color:black
+    }
+}
+#welcome{
+    filter: drop-shadow(0 1rem 0.5rem rgb(209, 223, 225));
+    display:flex;
+    flex-wrap: nowrap;
+    color:rgb(49, 113, 63); 
+    font-weight: 600;
+}
+#new{
+    filter: drop-shadow(1rem 2rem 0.5rem rgb(18, 19, 18));
+    color:rgb(39, 36, 36); 
+    text-align: center;
+    margin-left:20px;
+    font-weight:bolder;
+    cursor: pointer;
+    animation-name:scale;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+@keyframes scale {
+    0%{
+        color:rgb(255, 230, 0);
+        font-weight: 0;
+        font-size: 15vh;
+    }
+    100%{
+        color:rgb(255, 0, 115);
+        font-weight: 900;
+        font-size: 23vh;
+    }
+}
+#count{
+    font-size: 13vh;
+    margin-left:50vh;
+    margin-top:10vh;
+    color:rgb(251, 4, 4);
+    display:flex;
+    flex-wrap: nowrap;
+    animation-name: count;
+    animation-duration: 1s;
+    animation-delay: 3s;
+    
+}
+@keyframes count{
+    0%{
+       transform:scale(1);
+    }
+    100%{
+        transform:scale(2);
+    }
+}
+
+ @media (Max-width:480px) {
+     body{
+        display:flex;
+        flex-wrap: nowrap;
+        width:100%;
+        overflow: hidden;
+        transform:scale(.8);
+        margin:0;
+        padding:0;
+     }
+     #heading1{
+        font-size:20vh;
+        width:100%;
+        font-weight: 900;
+        overflow: hidden;
+        transform:scale(.8);
+     } 
+     #heading2{
+        font-size:7vh;
+        width:100%;
+        font-weight: 900;
+        overflow: hidden;
+        transform:scale(.8);
+     }
+     #new{
+      letter-spacing: 0px;
+       margin:0;
+       padding:0;
+     }
+     #count{
+    margin-left:30vh;
+     }
+
+
+  }
